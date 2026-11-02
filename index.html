@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Visa Compas — визы, ВНЖ и путешествия в одном приложении</title>
+  <meta name="description" content="Visa Compas: оформление виз и ВНЖ с личным куратором, авиабилеты, гостиницы и трансферы, коллекция штампов и сообщество путешественников." />
+  <meta name="theme-color" content="#150D3C" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="intro" id="intro" aria-hidden="true">
+    <div class="intro-stage">
+      <svg class="intro-compass" viewBox="0 0 200 200">
+        <circle class="intro-ring" cx="100" cy="100" r="92" />
+        <circle class="intro-ring thin" cx="100" cy="100" r="74" />
+        <g class="intro-ticks"></g>
+        <g class="intro-needle">
+          <path d="M100 26 L110 100 L100 174 L90 100 Z" fill="#FF5230" />
+          <path d="M100 100 L110 100 L100 174 Z" fill="#FFFFFF" opacity=".9" />
+          <circle cx="100" cy="100" r="6" fill="#FFB627" />
+        </g>
+      </svg>
+      <img class="intro-stamp" src="media/stamps/approved.png" alt="" />
+    </div>
+    <p class="intro-word"><span>Visa</span> <span>Compas</span></p>
+    <p class="intro-hint">Нажмите, чтобы пропустить</p>
+  </div>
+
+  <div class="glow" aria-hidden="true"></div>
+
+  <header class="nav" id="top">
+    <a class="logo" href="#top" aria-label="Visa Compas">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 6 L24 20 L20 34 L16 20 Z" fill="#FF5230"/><path d="M6 20 L20 16 L34 20 L20 24 Z" fill="currentColor" opacity=".55"/></svg>
+      Visa Compas
+    </a>
+    <nav aria-label="Разделы">
+      <a href="#features">Возможности</a>
+      <a href="#countries">Страны</a>
+      <a href="#stamps">Штампы</a>
+      <a href="#community">Сообщество</a>
+      <a href="#resources">Ресурсы</a>
+    </nav>
+    <a class="btn small" href="#download">Скачать</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <p class="kicker reveal">Визы · ВНЖ · Путешествия</p>
+        <h1 class="reveal">Компас,<br />который ведёт<br /><span class="grad">до визы и дальше</span></h1>
+        <p class="lead reveal">Подайте заявку за 10 минут, следите за каждым этапом, общайтесь с куратором и собирайте штампы стран в своём паспорте путешественника.</p>
+        <div class="cta reveal">
+          <a class="btn" href="#download">Скачать приложение</a>
+          <a class="btn ghost" href="#features">Что внутри</a>
+        </div>
+        <ul class="facts reveal">
+          <li><b>10</b> стран</li>
+          <li><b>20+</b> виз и ВНЖ</li>
+          <li><b>13</b> штампов в коллекции</li>
+        </ul>
+      </div>
+      <div class="hero-stage" aria-hidden="true">
+        <svg class="ring" viewBox="0 0 400 400">
+          <circle cx="200" cy="200" r="190" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/>
+          <circle cx="200" cy="200" r="150" fill="none" stroke="rgba(255,255,255,.18)"/>
+          <g class="ticks"></g>
+        </svg>
+        <div class="phone">
+          <video class="phone-video" src="media/loops/japan.mp4" autoplay muted loop playsinline poster="media/scenes/japan.jpg"></video>
+          <div class="phone-ui">
+            <span class="hello">こんにちは!</span>
+            <span class="place">Япония</span>
+            <span class="pill">Оформить визу</span>
+          </div>
+          <div class="sakura"></div>
+        </div>
+        <img class="float f1" src="media/icons3d/passport.png" alt="" />
+        <img class="float f2" src="media/icons3d/plane.png" alt="" />
+        <img class="float f3" src="media/stamps/country_spain.png" alt="" />
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="track">
+        <span>¡Hola! · España</span><span>Olá! · Portugal</span><span>Ciao! · Italia</span><span>Bonjour! · France</span><span>مرحبا · Dubai</span><span>Merhaba! · Türkiye</span><span>こんにちは · 日本</span><span>สวัสดี · Thailand</span><span>Hello! · London</span><span>Hey! · New York</span>
+        <span>¡Hola! · España</span><span>Olá! · Portugal</span><span>Ciao! · Italia</span><span>Bonjour! · France</span><span>مرحبا · Dubai</span><span>Merhaba! · Türkiye</span><span>こんにちは · 日本</span><span>สวัสดี · Thailand</span><span>Hello! · London</span><span>Hey! · New York</span>
+      </div>
+    </div>
+
+    <section class="section" id="features">
+      <p class="kicker reveal">Что умеет приложение</p>
+      <h2 class="reveal">Всё для поездки — в одном кармане</h2>
+      <div class="features">
+        <article class="feature reveal"><img src="media/icons3d/passport.png" alt="" /><h3>Визы и ВНЖ</h3><p>Шенген, Великобритания, США, Япония, ВНЖ Испании и Португалии. Анкета за 10 минут, цена без сюрпризов.</p></article>
+        <article class="feature reveal"><img src="media/icons3d/chat.png" alt="" /><h3>Личный куратор</h3><p>Чат прямо в приложении: проверка документов, ответы на вопросы, файлы. Менеджер отвечает в течение рабочего дня.</p></article>
+        <article class="feature reveal"><img src="media/icons3d/compass.png" alt="" /><h3>Маршрут заявки</h3><p>Каждый этап на виду: от проверки документов до готового паспорта. Статус обновляется сам.</p></article>
+        <article class="feature reveal"><img src="media/icons3d/plane.png" alt="" /><h3>Билеты и отели</h3><p>Авиабилеты, гостиницы и трансфер из аэропорта, чтобы собрать поездку целиком.</p></article>
+        <article class="feature reveal"><img src="media/icons3d/medal.png" alt="" /><h3>Штампы и награды</h3><p>За каждую страну — штамп в паспорт путешественника. Собрали серию — получили скидку.</p></article>
+        <article class="feature reveal"><img src="media/icons3d/suitcase.png" alt="" /><h3>Дневник путешествий</h3><p>Альбом фото по странам и сообщество, где делятся впечатлениями и советуют, куда поехать.</p></article>
+      </div>
+    </section>
+
+    <section class="section dark" id="countries">
+      <p class="kicker reveal">Направления</p>
+      <h2 class="reveal">Каждая страна — свой маленький мир</h2>
+      <p class="lead reveal">Поверните компас в приложении, и страна оживёт: сакура в Японии, воздушные шары над Стамбулом, фонарики в Бангкоке.</p>
+      <div class="islands" role="list"></div>
+    </section>
+
+    <section class="section" id="stamps">
+      <div class="split">
+        <div>
+          <p class="kicker reveal">Паспорт путешественника</p>
+          <h2 class="reveal">Собирайте штампы стран</h2>
+          <p class="lead reveal">Штамп ставится за реальные шаги: первую заявку, оплату, завершённую поездку. Четыре серии, редкие и легендарные оттиски, а за собранную серию — персональный промокод.</p>
+          <ul class="ticks-list reveal">
+            <li>Первые шаги — скидка 5%</li>
+            <li>Европа и Восток — скидка 10%</li>
+            <li>Дальние берега — скидка 15%</li>
+          </ul>
+        </div>
+        <div class="paper" aria-label="Пример коллекции штампов">
+          <div class="stamp-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section community" id="community">
+      <p class="kicker reveal">Сообщество</p>
+      <h2 class="reveal">Делитесь поездками и советами</h2>
+      <div class="cards">
+        <article class="post reveal">
+          <header><span class="ava" style="background:#0C86D6">ОЗ</span><div><b>Ольга Зимина</b><small>✦ 6 · Дубай</small></div></header>
+          <img src="media/scenes/uae.jpg" alt="Сцена Дубая из приложения" loading="lazy" />
+          <p><b>Неделя в Дубае в ноябре.</b> Виза пришла за 4 дня, куратор всё проверил заранее.</p>
+          <footer>♥ 24 · 💬 6</footer>
+        </article>
+        <article class="post reveal">
+          <header><span class="ava" style="background:#C2307A">ТА</span><div><b>Тимур А.</b><small>✦ 3 · Вопрос</small></div></header>
+          <p class="q">Куда лучше поехать в Японии весной, кроме Токио? Хочу сакуру без толп.</p>
+          <p class="answer">Ольга: Киото и Нара в будни, и озеро Кавагутико с видом на Фудзи.</p>
+          <footer>♥ 12 · 💬 9</footer>
+        </article>
+        <article class="post achievement reveal">
+          <header><span class="ava" style="background:#FF5230">АС</span><div><b>Анна С.</b><small>Достижение</small></div></header>
+          <div class="trophy"><img src="media/stamps/first_step.png" alt="" /><img src="media/stamps/first_chat.png" alt="" /><img src="media/stamps/first_pay.png" alt="" /></div>
+          <p><b>Открыто 4 из 13 печатей.</b> Серия «Первые шаги» собрана.</p>
+          <footer>♥ 31</footer>
+        </article>
+      </div>
+      <p class="note reveal">Примеры публикаций вымышлены. В сообществе есть модерация, жалобы и скрытие авторов; документы и личные данные публиковать нельзя.</p>
+    </section>
+
+    <section class="section" id="how">
+      <p class="kicker reveal">Как это работает</p>
+      <h2 class="reveal">Четыре шага до штампа</h2>
+      <ol class="steps">
+        <li class="reveal"><b>01</b><h3>Выберите страну</h3><p>Покрутите компас или проверьте шансы на визу за минуту.</p></li>
+        <li class="reveal"><b>02</b><h3>Заполните анкету</h3><p>10 минут в приложении, черновик сохраняется сам.</p></li>
+        <li class="reveal"><b>03</b><h3>Куратор проверит</h3><p>Правки, счёт и запись в визовый центр — в чате.</p></li>
+        <li class="reveal"><b>04</b><h3>Получите штамп</h3><p>Документы готовы, штамп в паспорте, можно собирать чемодан.</p></li>
+      </ol>
+    </section>
+
+    <section class="download" id="download">
+      <video src="media/loops/spain.mp4" autoplay muted loop playsinline poster="media/scenes/spain.jpg" aria-hidden="true"></video>
+      <div class="download-inner">
+        <h2 class="reveal">Скачайте Visa Compas</h2>
+        <p class="lead reveal">Приложение готовится к публикации в магазинах. Ссылки появятся здесь в день релиза.</p>
+        <div class="stores reveal">
+          <a class="store" href="#download" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9s-1.9-.9-3.2-.8c-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.2-.8s1.9.8 3.2.8c1.3 0 2.1-1.2 2.9-2.4.9-1.3 1.3-2.6 1.3-2.7-.1 0-2.5-1-2.5-4M14 5.4c.7-.8 1.1-1.9 1-3-.9 0-2.1.6-2.8 1.4-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.5 2.8-1.3"/></svg><span><small>Скоро в</small>App Store</span></a>
+          <a class="store" href="#download" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3.6 2.3 13.4 12l-9.8 9.7c-.4-.2-.6-.6-.6-1.1V3.4c0-.5.2-.9.6-1.1m11 8.5 2.6-2.6 3.2 1.8c.9.5.9 1.6 0 2.1l-3.2 1.8-2.6-2.6zm-1.2 1.2 2.5 2.5-11.7 6.6 9.2-9.1zm0 0L4.2 2.9 15.9 9.5z"/></svg><span><small>Скоро в</small>Google Play</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="resources">
+      <p class="kicker reveal">Для команды и заказчика</p>
+      <h2 class="reveal">Ресурсы проекта</h2>
+      <div class="resources">
+        <a class="res reveal" href="http://localhost:5180"><b>Админка и CRM</b><span>Входящие, клиенты, заявки, акции, модерация. Запускается командой npm run admin.</span></a>
+        <a class="res reveal" href="../README.md"><b>Инструкция запуска</b><span>Как поднять сервер, админку и приложение, маршрут показа.</span></a>
+        <a class="res reveal" href="../docs/competitive-analysis.md"><b>Анализ конкурентов</b><span>Рынок, барьеры путешественников и выводы для дизайна.</span></a>
+        <a class="res reveal" href="../docs/redesign-plan.md"><b>Дизайн-концепция</b><span>«Живой компас»: сцены стран, погода, штампы.</span></a>
+        <a class="res reveal" href="../docs/generation-log.md"><b>Журнал генерации</b><span>Чем и как созданы сцены, видео, иконки и штампы.</span></a>
+        <a class="res reveal" href="media/stamps/"><b>Бренд-ассеты</b><span>Штампы, 3D-иконки, сцены стран и видеоциклы.</span></a>
+        <a class="res reveal" href="http://localhost:54323"><b>Supabase Studio</b><span>База данных и хранилище на локальном стенде.</span></a>
+        <a class="res reveal" href="../supabase/migrations/"><b>Схема сервера</b><span>Таблицы, права доступа и бизнес-логика.</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>© 2026 Visa Compas · концепт для DelToro</span>
+    <span>Сроки и цены ориентировочные. Решение о выдаче визы принимает консульство.</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
