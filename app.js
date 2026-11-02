@@ -127,9 +127,73 @@ if (!['localhost', '127.0.0.1'].includes(location.hostname)) {
   document.querySelector('#resources .kicker').textContent = 'Что входит в проект';
 }
 
-// Nav turns solid after the hero; the glow follows the cursor.
+// Logo and the round button both bring the visitor back to the top.
+const toTop = document.querySelector('.to-top');
+const goTop = (e) => {
+  e?.preventDefault();
+  scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
+};
+document.querySelector('.logo').addEventListener('click', goTop);
+toTop.addEventListener('click', goTop);
+
+// Mobile menu.
+const burger = document.querySelector('.burger');
+const menu = document.getElementById('mobile-menu');
+const closeMenu = () => {
+  menu.hidden = true;
+  burger.setAttribute('aria-expanded', 'false');
+};
+burger.addEventListener('click', () => {
+  menu.hidden = !menu.hidden;
+  burger.setAttribute('aria-expanded', String(!menu.hidden));
+});
+menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu));
+addEventListener('keydown', (e) => e.key === 'Escape' && closeMenu());
+
+// Store buttons say plainly that links come on release day.
+const toast = document.querySelector('.toast');
+let toastTimer;
+document.querySelectorAll('.store').forEach((s) =>
+  s.addEventListener('click', (e) => {
+    e.preventDefault();
+    toast.textContent = 'Приложение готовится к публикации. Ссылка появится здесь в день релиза.';
+    toast.hidden = false;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => (toast.hidden = true), 3200);
+  }),
+);
+
+// Phones have no hover: country loops play while their card is on screen.
+if (!reduced && matchMedia('(hover: none)').matches) {
+  const play = new IntersectionObserver(
+    (entries) => entries.forEach((e) => {
+      const v = e.target.querySelector('video');
+      if (e.isIntersecting) {
+        v.style.opacity = '1';
+        v.play().catch(() => {});
+      } else v.pause();
+    }),
+    { threshold: 0.6 },
+  );
+  document.querySelectorAll('.island').forEach((c) => play.observe(c));
+}
+
+// Nav turns solid after the hero, the active section lights up, the top button appears; the glow follows the cursor.
 const nav = document.querySelector('.nav');
-addEventListener('scroll', () => nav.classList.toggle('solid', scrollY > 80), { passive: true });
+const links = [...document.querySelectorAll('.nav nav a')];
+const sections = links.map((a) => document.querySelector(a.getAttribute('href')));
+addEventListener(
+  'scroll',
+  () => {
+    nav.classList.toggle('solid', scrollY > 80);
+    toTop.classList.toggle('show', scrollY > 700);
+    const mark = scrollY + innerHeight * 0.35;
+    let current = -1;
+    sections.forEach((s, i) => s && s.offsetTop <= mark && (current = i));
+    links.forEach((a, i) => a.classList.toggle('active', i === current));
+  },
+  { passive: true },
+);
 if (!reduced) {
   addEventListener('pointermove', (e) => {
     document.documentElement.style.setProperty('--mx', `${e.clientX}px`);

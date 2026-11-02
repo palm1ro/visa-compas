@@ -6,6 +6,13 @@
   <title>Visa Compas — визы, ВНЖ и путешествия в одном приложении</title>
   <meta name="description" content="Visa Compas: оформление виз и ВНЖ с личным куратором, авиабилеты, гостиницы и трансферы, коллекция штампов и сообщество путешественников." />
   <meta name="theme-color" content="#150D3C" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='19' fill='%23150D3C'/%3E%3Ccircle cx='20' cy='20' r='14' fill='none' stroke='%23FFB627' stroke-width='2'/%3E%3Cpath d='M20 7 L24 20 L20 33 L16 20 Z' fill='%23FF5230'/%3E%3C/svg%3E" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Visa Compas — визы, ВНЖ и путешествия" />
+  <meta property="og:description" content="Заявка на визу за 10 минут, личный куратор, штампы стран и сообщество путешественников." />
+  <meta property="og:image" content="https://palm1ro.github.io/visa-compas/media/scenes/japan.jpg" />
+  <meta property="og:url" content="https://palm1ro.github.io/visa-compas/" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" />
   <link rel="stylesheet" href="styles.css" />
@@ -31,8 +38,8 @@
 
   <div class="glow" aria-hidden="true"></div>
 
-  <header class="nav" id="top">
-    <a class="logo" href="#top" aria-label="Visa Compas">
+  <header class="nav">
+    <a class="logo" href="#top" aria-label="Visa Compas, наверх">
       <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 6 L24 20 L20 34 L16 20 Z" fill="#FF5230"/><path d="M6 20 L20 16 L34 20 L20 24 Z" fill="currentColor" opacity=".55"/></svg>
       Visa Compas
     </a>
@@ -44,10 +51,24 @@
       <a href="#resources">Ресурсы</a>
     </nav>
     <a class="btn small" href="#download">Скачать</a>
+    <button class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
   </header>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Разделы" hidden>
+    <a href="#features">Возможности</a>
+    <a href="#countries">Страны</a>
+    <a href="#stamps">Штампы</a>
+    <a href="#community">Сообщество</a>
+    <a href="#how">Как это работает</a>
+    <a href="#download">Скачать</a>
+  </nav>
+
+  <button class="to-top" type="button" aria-label="Наверх">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+  </button>
+  <div class="toast" role="status" aria-live="polite" hidden></div>
 
   <main>
-    <section class="hero">
+    <section class="hero" id="top">
       <div class="hero-text">
         <p class="kicker reveal">Визы · ВНЖ · Путешествия</p>
         <h1 class="reveal">Компас,<br />который ведёт<br /><span class="grad">до визы и дальше</span></h1>
