@@ -48,7 +48,7 @@
       <a href="#countries">Страны</a>
       <a href="#stamps">Штампы</a>
       <a href="#community">Сообщество</a>
-      <a href="#resources">Ресурсы</a>
+      <a href="#faq">Вопросы</a>
     </nav>
     <a class="btn small" href="#download">Скачать</a>
     <button class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
@@ -59,6 +59,8 @@
     <a href="#stamps">Штампы</a>
     <a href="#community">Сообщество</a>
     <a href="#how">Как это работает</a>
+    <a href="#faq">Вопросы</a>
+    <a href="#lead">Оставить заявку</a>
     <a href="#download">Скачать</a>
   </nav>
 
@@ -186,6 +188,44 @@
       </ol>
     </section>
 
+    <section class="section" id="faq">
+      <p class="kicker reveal">Вопросы</p>
+      <h2 class="reveal">Коротко о главном</h2>
+      <div class="faq">
+        <details class="reveal"><summary>Сколько стоит оформление?</summary><p>Цена складывается из нашего сопровождения и консульского сбора, вы видите обе суммы до оплаты. Шенгенская виза — от 120 € за сопровождение, ВНЖ — от 650 €.</p></details>
+        <details class="reveal"><summary>Сколько ждать визу?</summary><p>Ориентир указан на каждой услуге: туристические визы обычно 5–25 дней, ВНЖ — от 45 дней. Решение о выдаче принимает консульство.</p></details>
+        <details class="reveal"><summary>Что делает куратор?</summary><p>Проверяет анкету и каждый документ, говорит, что поправить, бронирует подачу и ведёт заявку до готового паспорта. Общаться можно в чате приложения.</p></details>
+        <details class="reveal"><summary>Можно подать на всю семью?</summary><p>Да. В анкете указываются взрослые и дети, куратор подготовит перечень документов для каждого.</p></details>
+        <details class="reveal"><summary>Как работают штампы и скидки?</summary><p>За реальные шаги вы получаете штампы стран. Собрали серию — получаете персональный промокод. Пригласили друга — скидка 10% вам обоим.</p></details>
+        <details class="reveal"><summary>Безопасно ли загружать документы?</summary><p>Файлы хранятся в закрытом хранилище: их видите только вы и ваш куратор. В сообществе публиковать документы и личные данные нельзя.</p></details>
+      </div>
+    </section>
+
+    <section class="section lead-section" id="lead">
+      <div class="split">
+        <div>
+          <p class="kicker reveal">Не нашли ответ?</p>
+          <h2 class="reveal">Оставьте заявку — куратор свяжется</h2>
+          <p class="lead reveal">Расскажите, куда и зачем планируете поездку. Ответим в течение рабочего дня, в мессенджере или по телефону.</p>
+        </div>
+        <form class="lead-form" id="lead-form" novalidate>
+          <label>Имя<input id="lead-name" name="name" autocomplete="given-name" required maxlength="80" /></label>
+          <label>Телефон или Telegram<input id="lead-contact" name="contact" autocomplete="tel" required maxlength="80" placeholder="+7 900 000-00-00 или @username" /></label>
+          <label>Страна
+            <select id="lead-country" name="country">
+              <option value="">Пока не решил(а)</option>
+              <option>Испания</option><option>Португалия</option><option>Италия</option><option>Франция</option><option>ОАЭ</option><option>Турция</option><option>Япония</option><option>Таиланд</option><option>Великобритания</option><option>США</option>
+            </select>
+          </label>
+          <label>Что нужно<textarea id="lead-message" name="message" rows="3" maxlength="1000" placeholder="Например: шенген для семьи на майские"></textarea></label>
+          <input class="hp" id="lead-company" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <label class="check"><input id="lead-consent" type="checkbox" required /> Согласен(на) на обработку данных для ответа на заявку</label>
+          <button class="btn" type="submit">Отправить заявку</button>
+          <p class="form-note" id="lead-note" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
     <section class="download" id="download">
       <video src="media/loops/spain.mp4" autoplay muted loop playsinline poster="media/scenes/spain.jpg" aria-hidden="true"></video>
       <div class="download-inner">
@@ -219,6 +259,7 @@
     <span>Сроки и цены ориентировочные. Решение о выдаче визы принимает консульство.</span>
   </footer>
 
+  <script src="config.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

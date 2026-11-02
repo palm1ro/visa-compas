@@ -136,6 +136,48 @@ img, video { display: block; max-width: 100%; }
 
 .foot { position: relative; z-index: 1; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; padding: 40px max(28px, calc((100% - var(--max)) / 2)); color: var(--soft); font-size: 14px; }
 
+.faq { display: grid; gap: 12px; margin-top: 40px; max-width: 860px; }
+.faq details { padding: 20px 24px; border-radius: 20px; background: #fff; border: 1px solid var(--line); }
+.faq summary { cursor: pointer; font-weight: 800; font-size: 18px; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: '+'; color: var(--ember); font-size: 24px; line-height: 1; transition: transform .25s; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq p { margin-top: 12px; color: var(--soft); }
+
+.lead-section { background: linear-gradient(180deg, var(--paper), var(--bone)); }
+.lead-form { display: grid; gap: 14px; padding: 28px; border-radius: 28px; background: #fff; border: 1px solid var(--line); box-shadow: 0 40px 70px -40px rgba(83, 54, 226, .35); }
+.lead-form label { display: grid; gap: 6px; font-weight: 700; font-size: 14px; color: var(--soft); }
+.lead-form input, .lead-form select, .lead-form textarea { font: 600 16px Manrope, sans-serif; color: var(--text); padding: 13px 16px; border-radius: 14px; border: 1.5px solid var(--line); background: var(--paper); }
+.lead-form input:focus, .lead-form select:focus, .lead-form textarea:focus { outline: none; border-color: var(--violet); }
+.lead-form .check { display: flex; align-items: flex-start; gap: 10px; font-weight: 600; }
+.lead-form .check input { width: 18px; height: 18px; margin-top: 2px; }
+.lead-form .btn { border: 0; cursor: pointer; font-size: 16px; }
+.lead-form .btn:disabled { opacity: .6; cursor: default; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.form-note { min-height: 1.4em; font-weight: 700; font-size: 15px; }
+.form-note.ok { color: #0b7f58; }
+.form-note.err { color: #d6321a; }
+
+/* Country landing pages */
+.country-page .nav { gap: 12px; }
+.country-page .nav .btn { margin-left: auto; }
+.country-hero { position: relative; min-height: 78vh; display: grid; align-items: end; color: #fff; overflow: hidden; }
+.country-hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.country-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(rgba(21,13,60,.15), rgba(21,13,60,.85)); }
+.country-hero-text { position: relative; z-index: 1; padding: 140px max(20px, calc((100% - var(--max)) / 2)) 60px; display: grid; gap: 14px; justify-items: start; }
+.country-hero .kicker { color: var(--brass); }
+.country-hero .lead { color: rgba(255,255,255,.85); }
+.svc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; margin-top: 40px; }
+.svc { display: grid; gap: 10px; align-content: start; padding: 24px; border-radius: 24px; background: #fff; border: 1px solid var(--line); }
+.svc .tag { justify-self: start; padding: 3px 10px; border-radius: 999px; background: var(--bone); font-weight: 800; font-size: 12px; color: var(--ember); }
+.svc p { color: var(--soft); font-size: 15px; }
+.svc dl { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 6px 0; }
+.svc dt { font-size: 12px; color: var(--soft); }
+.svc dd { margin: 0; font-weight: 800; }
+.svc summary { cursor: pointer; font-weight: 700; color: var(--violet); }
+.svc ul { margin: 8px 0 0; padding-left: 18px; color: var(--soft); font-size: 14px; }
+.island-link { text-decoration: none; color: inherit; display: block; }
+
 /* Anchors land below the floating bar. */
 section[id] { scroll-margin-top: 90px; }
 .nav nav a.active { opacity: 1; color: var(--brass); }

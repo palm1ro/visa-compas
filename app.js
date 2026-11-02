@@ -48,9 +48,11 @@ const COUNTRIES = [
 // Country cards: the scene still, and its living loop on hover.
 const islands = document.querySelector('.islands');
 COUNTRIES.forEach(([id, name, hello]) => {
-  const card = document.createElement('article');
-  card.className = 'island';
+  const card = document.createElement('a');
+  card.className = 'island island-link';
+  card.href = `countries/${id}.html`;
   card.setAttribute('role', 'listitem');
+  card.setAttribute('aria-label', `${name}: визы и ВНЖ`);
   card.innerHTML = `<img src="media/scenes/${id}.jpg" alt="${name}" loading="lazy"><video muted loop playsinline preload="none" src="media/loops/${id}.mp4" aria-hidden="true"></video><div class="label"><small>${hello}</small><b>${name}</b></div>`;
   const video = card.querySelector('video');
   if (!reduced) {
@@ -176,6 +178,56 @@ if (!reduced && matchMedia('(hover: none)').matches) {
     { threshold: 0.6 },
   );
   document.querySelectorAll('.island').forEach((c) => play.observe(c));
+}
+
+// Lead form: goes straight to the CRM through the `lead` function. Offline, it says where to write instead.
+const cfg = window.VC_CONFIG ?? {};
+const form = document.getElementById('lead-form');
+const note = document.getElementById('lead-note');
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const v = (id) => document.getElementById(id).value.trim();
+  note.className = 'form-note';
+  if (!v('lead-name') || v('lead-contact').length < 5) {
+    note.textContent = 'Укажите имя и телефон или Telegram.';
+    note.classList.add('err');
+    return;
+  }
+  if (!document.getElementById('lead-consent').checked) {
+    note.textContent = 'Нужно согласие на обработку данных.';
+    note.classList.add('err');
+    return;
+  }
+  const button = form.querySelector('button');
+  button.disabled = true;
+  note.textContent = 'Отправляем…';
+  try {
+    const res = await fetch(`${cfg.api}/lead`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: v('lead-name'), contact: v('lead-contact'), country: v('lead-country'), message: v('lead-message'), company: v('lead-company') }),
+    });
+    if (!res.ok) throw new Error(String(res.status));
+    form.reset();
+    note.textContent = 'Спасибо! Куратор свяжется с вами в течение рабочего дня.';
+    note.classList.add('ok');
+    if (window.ym && cfg.metrika) window.ym(cfg.metrika, 'reachGoal', 'lead');
+  } catch {
+    note.textContent = `Форма сейчас недоступна. Напишите нам: ${cfg.email}`;
+    note.classList.add('err');
+  } finally {
+    button.disabled = false;
+  }
+});
+
+// Yandex.Metrika, only when a counter number is set in config.js.
+if (cfg.metrika) {
+  (function (m, e, t, r, i, k, a) {
+    m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+    m[i].l = 1 * new Date();
+    k = e.createElement(t); a = e.getElementsByTagName(t)[0]; k.async = 1; k.src = r; a.parentNode.insertBefore(k, a);
+  })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
+  window.ym(cfg.metrika, 'init', { clickmap: true, trackLinks: true, accurateTrackBounce: true });
 }
 
 // Nav turns solid after the hero, the active section lights up, the top button appears; the glow follows the cursor.

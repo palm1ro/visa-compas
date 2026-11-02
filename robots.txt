@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://palm1ro.github.io/visa-compas/sitemap.xml
